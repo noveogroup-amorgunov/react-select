@@ -148,10 +148,10 @@ export default class Async extends Component {
 		}
 
 		if (onInputChange) {
-			onInputChange(transformedInputValue);
+			transformedInputValue = onInputChange(transformedInputValue);
 		}
 
-		this.setState({ inputValue });
+		this.setState({ inputValue: transformedInputValue });
 		this.loadOptions(transformedInputValue);
 
 		// Return the original input value to avoid modifying the user's view of the input while typing.
